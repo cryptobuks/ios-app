@@ -349,6 +349,9 @@ class ConversationViewController: UIViewController {
                 }
                 self.hideLoading()
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                self?.dataSource.canScrollToNewIncomingMessage = true
+            }
         }
     }
     
